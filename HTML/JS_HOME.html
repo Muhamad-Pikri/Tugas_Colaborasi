@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rangkuman Dasar JavaScript</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-top: 20px;
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            color: #343a40;
+            font-size: 1.5rem;
+            margin-top: 30px;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #6c757d;
+        }
+
+        .container {
+            margin-top: 40px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .code {
+            background-color: #e9ecef;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 10px;
+            background-color: #343a40;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Dasar JavaScript</h1>
+
+        <h2>JS Home</h2>
+        <p>JavaScript adalah bahasa pemrograman yang digunakan untuk membuat halaman web lebih interaktif.</p>
+        <p>Contoh:</p>
+        <pre class="code">
+document.body.innerHTML = "Halo, Dunia!";
+        </pre>
+
+        <h2>JS Introduction</h2>
+        <p>Memperkenalkan JavaScript sebagai bahasa pemrograman untuk web dan non-web, seperti server.</p>
+        <p>Contoh:</p>
+        <pre class="code">
+console.log("Belajar JavaScript Dasar");
+        </pre>
+
+        <h2>JS Where To</h2>
+        <p>JavaScript dapat ditempatkan di dalam <span class="code">&lt;head&gt;</span>, <span
+                class="code">&lt;body&gt;</span>, atau file eksternal.</p>
+        <p>Contoh:</p>
+        <pre class="code">
+<script>
+    alert("JavaScript di Body!");
+</script>
+        </pre>
+
+        <h2>JS Output</h2>
+        <p>Menghasilkan output menggunakan metode seperti <span class="code">document.write()</span>, <span
+                class="code">alert()</span>, atau <span class="code">console.log()</span>.</p>
+        <p>Contoh:</p>
+        <pre class="code">
+console.log("Output di Konsol");
+document.write("Output di Halaman Web");
+alert("Output berupa Notifikasi");
+        </pre>
+
+        <h2>JS Statements</h2>
+        <p>Instruksi JavaScript dieksekusi satu per satu, dipisahkan dengan titik koma.</p>
+        <p>Contoh:</p>
+        <pre class="code">
+let a = 5;
+let b = 10;
+console.log(a + b);
+        </pre>
+
+        <h2>JS Syntax</h2>
+        <p>Sintaks menentukan cara JavaScript ditulis, seperti menggunakan variabel, fungsi, dan pernyataan.</p>
+        <p>Contoh:</p>
+        <pre class="code">
+function sapa() {
+    console.log("Halo, JavaScript!");
+}
+sapa();
+        </pre>
+
+        <h2>JS Comments</h2>
+        <p>Komentar dibuat dengan <span class="code">//</span> untuk satu baris atau <span class="code">/* */</span>
+            untuk beberapa baris.</p>
+        <p>Contoh:</p>
+        <pre class="code">
+// Ini adalah komentar satu baris
+/*
+Ini adalah komentar 
+beberapa baris
+*/
+        </pre>
+
+        <h2>JS Variables</h2>
+        <p>Variabel dideklarasikan menggunakan <span class="code">var</span>, <span class="code">let</span>, atau <span
+                class="code">const</span>.</p>
+        <p>Contoh:</p>
+        <pre class="code">
+let nama = "John";
+const umur = 30;
+console.log(nama, umur);
+        </pre>
+
+        <h2>JS Let</h2>
+        <p><span class="code">let</span> digunakan untuk mendeklarasikan variabel dengan lingkup blok.</p>
+        <p>Contoh:</p>
+        <pre class="code">
+let x = 10;
+{
+    let x = 20;
+    console.log(x); // 20
+}
+console.log(x); // 10
+        </pre>
+
+        <h2>JS Const</h2>
+        <p><span class="code">const</span> digunakan untuk mendeklarasikan variabel yang nilainya tidak bisa diubah.</p>
+        <p>Contoh:</p>
+        <pre class="code">
+const pi = 3.14;
+console.log(pi);
+        </pre>
+
+        <h2>JS Operators</h2>
+        <p>Menyediakan operator seperti aritmatika, perbandingan, dan logika.</p>
+        <p>Contoh:</p>
+        <pre class="code">
+let a = 5;
+let b = 3;
+console.log(a + b); // 8
+        </pre>
+
+        <h2>JS Arithmetic</h2>
+        <p>Menggunakan operator seperti <span class="code">+</span>, <span class="code">-</span>, <span
+                class="code">*</span>, dan <span class="code">/</span>.</p>
+        <p>Contoh:</p>
+        <pre class="code">
+let hasil = 10 * 2 / 5;
+console.log(hasil);
+        </pre>
+
+        <h2>JS Assignment</h2>
+        <p>Operator penugasan seperti <span class="code">=</span>, <span class="code">+=</span>, dan <span
+                class="code">*=</span> digunakan untuk menetapkan nilai.</p>
+        <p>Contoh:</p>
+        <pre class="code">
+let x = 5;
+x += 3;
+console.log(x); // 8
+        </pre>
+
+        <h2>JS Data Types</h2>
+        <p>Data tipe utama adalah string, number, boolean, object, dan undefined.</p>
+        <p>Contoh:</p>
+        <pre class="code">
+let nama = "John"; // string
+let umur = 30; // number
+let isMarried = false; // boolean
+        </pre>
+
+        <h2>JS Functions</h2>
+        <p>Fungsi dideklarasikan menggunakan <span class="code">function</span>, digunakan untuk menjalankan kode
+            tertentu.</p>
+        <p>Contoh:</p>
+        <pre class="code">
+function tambah(a, b) {
+    return a + b;
+}
+console.log(tambah(5, 10));
+        </pre>
+
+        <h2>JS Objects</h2>
+        <p>Objek adalah kumpulan properti yang mendefinisikan karakteristiknya.</p>
+        <p>Contoh:</p>
+        <pre class="code">
+let mobil = {
+    merk: "Toyota",
+    tahun: 2020
+};
+console.log(mobil);
+        </pre>
+
+        <h2>JS Object Properties</h2>
+        <p>Properti adalah nilai yang terkait dengan objek, diakses menggunakan dot atau bracket notation.</p>
+        <p>Contoh:</p>
+        <pre class="code">
+let buku = {
+    judul: "JavaScript Dasar",
+    halaman: 200
+};
+console.log(buku.judul);
+        </pre>
+    </div>
+
+    <div class="text-center mt-4">
+       <P>Klik Ini Ya <a href="JS_KEDUA.html" class="btn btn-success">Next Web Tentang JavaScript</a> </P>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Dasar JavaScript</p>
+    </footer>
+
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

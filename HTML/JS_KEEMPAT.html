@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript & JSON Rangkuman</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1,
+        h2 {
+            color: #0056b3;
+        }
+
+        .example {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+        }
+
+        .code-block {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 10px;
+            background-color: #343a40;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Rangkuman JavaScript & JSON</h1>
+
+        <h2>JS Window</h2>
+        <p>Menangani jendela browser seperti ukuran dan posisi.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                alert("Ukuran jendela browser: " + window.innerWidth + " x " + window.innerHeight);
+            </code>
+            </div>
+        </div>
+
+        <h2>JS Screen</h2>
+        <p>Informasi tentang layar pengguna, seperti lebar dan tinggi layar.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                alert("Lebar layar: " + screen.width + " px, Tinggi layar: " + screen.height + " px");
+            </code>
+            </div>
+        </div>
+
+        <h2>JS Location</h2>
+        <p>Memberikan informasi atau mengubah URL halaman saat ini.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                window.location.href = "https://www.google.com";
+            </code>
+            </div>
+        </div>
+
+        <h2>JS History</h2>
+        <p>Metode untuk berinteraksi dengan riwayat penjelajahan browser.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                history.back(); // Kembali ke halaman sebelumnya
+            </code>
+            </div>
+        </div>
+
+        <h2>JS Navigator</h2>
+        <p>Memberikan informasi tentang browser dan sistem operasi pengguna.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                alert("Nama browser: " + navigator.appName);
+            </code>
+            </div>
+        </div>
+
+        <h2>JS Popup Alert</h2>
+        <p>Menampilkan kotak pesan pop-up menggunakan <code>alert()</code>.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                alert("Ini adalah pesan pop-up!");
+            </code>
+            </div>
+        </div>
+
+        <h2>JS Timing</h2>
+        <p>Fungsi untuk menangani penundaan, seperti <code>setTimeout()</code> dan <code>setInterval()</code>.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                setTimeout(function() {
+                    alert("2 detik sudah berlalu!");
+                }, 2000);
+            </code>
+            </div>
+        </div>
+
+        <h2>JS Cookies</h2>
+        <p>Metode untuk mengakses dan mengelola cookies di browser.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                document.cookie = "username=John Doe";
+            </code>
+            </div>
+        </div>
+
+        <h2>Web API Intro</h2>
+        <p>Pengantar ke API Web untuk komunikasi antara browser dan server.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                fetch('https://api.example.com/data')
+                    .then(response => response.json())
+                    .then(data => console.log(data));
+            </code>
+            </div>
+        </div>
+
+        <h2>Web Forms API</h2>
+        <p>Interaksi dengan elemen formulir di halaman web.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                document.getElementById("myForm").submit();
+            </code>
+            </div>
+        </div>
+
+        <h2>Web Storage API</h2>
+        <p>Menawarkan penyimpanan data di sisi klien melalui LocalStorage dan SessionStorage.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                localStorage.setItem("username", "Jane Doe");
+                alert(localStorage.getItem("username"));
+            </code>
+            </div>
+        </div>
+
+        <h2>AJAX Intro</h2>
+        <p>Metode untuk melakukan request asinkron tanpa memuat ulang halaman.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                const xhr = new XMLHttpRequest();
+                xhr.open("GET", "https://api.example.com/data", true);
+                xhr.onload = function() {
+                    if (xhr.status == 200) {
+                        console.log(xhr.responseText);
+                    }
+                };
+                xhr.send();
+            </code>
+            </div>
+        </div>
+
+        <h2>JSON Parse</h2>
+        <p>Menangani parsing string JSON menjadi objek JavaScript dengan <code>JSON.parse()</code>.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                const jsonString = '{"name":"John", "age":30}';
+                const jsonObj = JSON.parse(jsonString);
+                alert(jsonObj.name); // John
+            </code>
+            </div>
+        </div>
+
+        <h2>JSON Stringify</h2>
+        <p>Mengubah objek JavaScript menjadi string JSON menggunakan <code>JSON.stringify()</code>.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                const obj = {name: "John", age: 30};
+                const jsonStr = JSON.stringify(obj);
+                alert(jsonStr);
+            </code>
+            </div>
+        </div>
+
+        <h2>jQuery Selectors</h2>
+        <p>Selektor jQuery untuk memilih elemen HTML dan berinteraksi dengannya.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                $(document).ready(function(){
+                    $("p").click(function(){
+                        alert("Paragraf diklik!");
+                    });
+                });
+            </code>
+            </div>
+        </div>
+
+        <!-- Additional Sections with examples -->
+        <h2>jQuery HTML</h2>
+        <p>Manipulasi konten HTML menggunakan jQuery.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                $("p").html("Konten HTML telah diubah!");
+            </code>
+            </div>
+        </div>
+
+        <h2>jQuery CSS</h2>
+        <p>Pengaturan gaya CSS menggunakan jQuery.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                $("p").css("color", "blue");
+            </code>
+            </div>
+        </div>
+
+        <h2>JS Canvas</h2>
+        <p>Elemen <code>&lt;canvas&gt;</code> di HTML5 untuk menggambar grafik dan gambar dinamis menggunakan
+            JavaScript.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                const canvas = document.getElementById("myCanvas");
+                const ctx = canvas.get
+                const ctx = canvas.getContext("2d");
+                ctx.fillStyle = "green";
+                ctx.fillRect(50, 50, 150, 100); // Menggambar kotak hijau
+            </code>
+            </div>
+        </div>
+
+        <h2>JS Plotly</h2>
+        <p>Pustaka JavaScript untuk membuat grafik interaktif dengan Plotly.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                var trace1 = {
+                    x: [1, 2, 3, 4],
+                    y: [10, 11, 12, 13],
+                    type: 'scatter'
+                };
+                var data = [trace1];
+                Plotly.newPlot('myDiv', data);
+            </code>
+            </div>
+        </div>
+
+        <h2>JS Chart.js</h2>
+        <p>Pustaka JavaScript untuk membuat grafik menggunakan Chart.js.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                var ctx = document.getElementById('myChart').getContext('2d');
+                var chart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                        datasets: [{
+                            label: 'Jumlah',
+                            data: [12, 19, 3, 5, 2, 3],
+                            backgroundColor: ['red', 'blue', 'yellow', 'green', 'purple', 'orange'],
+                        }]
+                    }
+                });
+            </code>
+            </div>
+        </div>
+
+        <h2>JS Google Chart</h2>
+        <p>Pustaka untuk menampilkan grafik menggunakan Google Chart API.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                google.charts.load('current', {'packages':['corechart', 'bar']});
+                google.charts.setOnLoadCallback(drawStuff);
+                
+                function drawStuff() {
+                    var data = new google.visualization.arrayToDataTable([
+                        ['City', '2010 Population', '2000 Population'],
+                        ['New York City', 8175133, 8008278],
+                        ['Los Angeles', 3792621, 3694820],
+                        ['Chicago', 2695598, 2896016],
+                    ]);
+                    
+                    var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+                    chart.draw(data, {width: 600, height: 400});
+                }
+            </code>
+            </div>
+        </div>
+
+        <h2>JS D3.js</h2>
+        <p>Pustaka JavaScript untuk membuat grafik dan visualisasi data dinamis menggunakan D3.js.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                var dataset = [25, 30, 45, 60, 20];
+                var svg = d3.select("body").append("svg")
+                            .attr("width", 200)
+                            .attr("height", 200);
+                svg.selectAll("circle")
+                   .data(dataset)
+                   .enter().append("circle")
+                   .attr("cx", function(d, i) { return i * 50 + 25; })
+                   .attr("cy", 100)
+                   .attr("r", function(d) { return d; })
+                   .style("fill", "blue");
+            </code>
+            </div>
+        </div>
+
+        <h2>JS HTML DOM</h2>
+        <p>Manipulasi dan interaksi dengan elemen DOM menggunakan JavaScript.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                document.getElementById("demo").innerHTML = "Teks ini telah diubah!";
+            </code>
+            </div>
+        </div>
+
+        <h2>JS HTML Input</h2>
+        <p>Penggunaan elemen <code>&lt;input&gt;</code> dalam HTML untuk menerima input pengguna.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                <input type="text" id="userInput" placeholder="Masukkan nama">
+                <button onclick="displayInput()">Tampilkan Nama</button>
+                <p id="output"></p>
+                <script>
+                    function displayInput() {
+                        var name = document.getElementById("userInput").value;
+                        document.getElementById("output").innerHTML = "Nama Anda: " + name;
+                    }
+                </script>
+            </code>
+            </div>
+        </div>
+
+        <h2>JS HTML Objects</h2>
+        <p>Objek HTML dalam JavaScript yang mewakili elemen-elemen HTML.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                var button = document.getElementById("myButton");
+                button.addEventListener("click", function() {
+                    alert("Tombol diklik!");
+                });
+            </code>
+            </div>
+        </div>
+
+        <h2>JS HTML Events</h2>
+        <p>Pengelolaan peristiwa HTML, seperti klik atau pengisian formulir.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                <button id="myButton">Klik Saya</button>
+                <script>
+                    document.getElementById("myButton").onclick = function () {
+                        alert("Tombol telah diklik!");
+                    };
+                </script>
+            </code>
+            </div>
+        </div>
+
+        <h2>JS Browser</h2>
+        <p>Menangani interaksi dengan browser menggunakan JavaScript.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                alert("Nama browser Anda adalah: " + navigator.userAgent);
+            </code>
+            </div>
+        </div>
+
+        <h2>JS Editor</h2>
+        <p>Alat untuk menulis, mengedit, dan menguji kode JavaScript.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                // Gunakan alat seperti CodePen, JSFiddle, atau editor lokal seperti VS Code.
+            </code>
+            </div>
+        </div>
+
+        <h2>JS Exercises</h2>
+        <p>Latihan-latihan untuk melatih keterampilan JavaScript.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                // Coba buat program untuk menghitung faktorial
+                function factorial(n) {
+                    if (n === 0 || n === 1) return 1;
+                    return n * factorial(n - 1);
+                }
+                console.log(factorial(5)); // Output: 120
+            </code>
+            </div>
+        </div>
+
+        <h2>JS Quiz</h2>
+        <p>Kuis untuk menguji pemahaman JavaScript.</p>
+        <div class="example">
+            <p><strong>Contoh:</strong></p>
+            <div class="code-block">
+                <code>
+                var answer = prompt("Siapa presiden pertama Indonesia?");
+                if (answer.toLowerCase() === "soekarno") {
+                    alert("Jawaban benar!");
+                } else {
+                    alert("Jawaban salah.");
+                }
+            </code>
+            </div>
+        </div>
+
+    </div>
+    <div class="text-center mt-4">
+        <P>Klik Ini Ya <a href="JS_KELIMA.html" class="btn btn-success">Next Web Tentang JavaScript</a> </P>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Dasar JavaScript</p>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

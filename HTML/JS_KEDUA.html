@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rangkuman JavaScript Lanjutan</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+        }
+        h1 {
+            color: #343a40;
+            text-align: center;
+            margin-top: 20px;
+        }
+        h2 {
+            color: #495057;
+        }
+        p {
+            color: #6c757d;
+        }
+        code {
+            background-color: #f1f3f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .container {
+            margin-top: 30px;
+        }
+        .example-code {
+            background-color: #e9ecef;
+            border-radius: 4px;
+            padding: 10px;
+            margin-top: 20px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .example-section {
+            margin-bottom: 40px;
+        }
+        .alert-custom {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 10px;
+            background-color: #343a40;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>JavaScript Rangkuman Lanjutan</h1>
+
+    <!-- JS Object Methods -->
+    <div class="example-section">
+        <h2>JS Object Methods</h2>
+        <p>Metode adalah fungsi yang terkait dengan objek, misalnya <code>toString()</code> atau <code>valueOf()</code>.</p>
+        <div class="example-code">
+            <pre>
+const obj = { name: "John", age: 30 };
+console.log(obj.toString()); // Outputs: [object Object]
+            </pre>
+        </div>
+    </div>
+
+    <!-- JS Object Display -->
+    <div class="example-section">
+        <h2>JS Object Display</h2>
+        <p>Menampilkan objek menggunakan <code>console.log()</code>, atau mengubahnya menjadi string.</p>
+        <div class="example-code">
+            <pre>
+const person = { name: "John", age: 30 };
+console.log(person); // Outputs: { name: 'John', age: 30 }
+            </pre>
+        </div>
+    </div>
+
+    <!-- JS Object Constructors -->
+    <div class="example-section">
+        <h2>JS Object Constructors</h2>
+        <p>Gunakan konstruktor seperti <code>function</code> untuk membuat objek baru dengan properti yang sama.</p>
+        <div class="example-code">
+            <pre>
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+const person1 = new Person("John", 30);
+console.log(person1); // Outputs: Person { name: 'John', age: 30 }
+            </pre>
+        </div>
+    </div>
+
+    <!-- JS Events -->
+    <div class="example-section">
+        <h2>JS Events</h2>
+        <p>Events seperti klik, mouseover, atau submit digunakan untuk interaktivitas.</p>
+        <div class="alert alert-custom">
+            Contoh event <code>click</code> pada tombol:
+        </div>
+        <div class="example-code">
+            <pre>
+<button onclick="alert('Button clicked!')">Click Me</button>
+            </pre>
+        </div>
+    </div>
+
+    <!-- JS Strings -->
+    <div class="example-section">
+        <h2>JS Strings</h2>
+        <p>String adalah teks yang dideklarasikan dengan tanda kutip ganda atau tunggal.</p>
+        <div class="example-code">
+            <pre>
+let greeting = "Hello, world!";
+console.log(greeting); // Outputs: Hello, world!
+            </pre>
+        </div>
+    </div>
+
+    <!-- JS String Methods -->
+    <div class="example-section">
+        <h2>JS String Methods</h2>
+        <p>Metode string seperti <code>length</code>, <code>slice()</code>, dan <code>replace()</code> digunakan untuk memanipulasi teks.</p>
+        <div class="example-code">
+            <pre>
+let message = "Hello, JavaScript!";
+console.log(message.length); // Outputs: 19
+console.log(message.slice(0, 5)); // Outputs: Hello
+console.log(message.replace("JavaScript", "World")); // Outputs: Hello, World!
+            </pre>
+        </div>
+    </div>
+
+    <!-- JS String Search -->
+    <div class="example-section">
+        <h2>JS String Search</h2>
+        <p>Mencari string menggunakan metode seperti <code>indexOf()</code> atau <code>search()</code>.</p>
+        <div class="example-code">
+            <pre>
+let str = "I love JavaScript!";
+console.log(str.indexOf("JavaScript")); // Outputs: 7
+console.log(str.search("love")); // Outputs: 2
+            </pre>
+        </div>
+    </div>
+
+    <!-- JS String Templates -->
+    <div class="example-section">
+        <h2>JS String Templates</h2>
+        <p>Gunakan template literal (<code>``</code>) untuk interpolasi string dengan <code>${expression}</code>.</p>
+        <div class="example-code">
+            <pre>
+let name = "John";
+let message = Hello, ${name}!;
+console.log(message); // Outputs: Hello, John!
+            </pre>
+        </div>
+    </div>
+
+    <!-- JS Numbers -->
+    <div class="example-section">
+        <h2>JS Numbers</h2>
+        <p>Angka adalah tipe data untuk bilangan, mendukung operasi aritmatika.</p>
+        <div class="example-code">
+            <pre>
+let num1 = 10;
+let num2 = 5;
+console.log(num1 + num2); // Outputs: 15
+            </pre>
+        </div>
+    </div>
+
+    <!-- JS BigInt -->
+    <div class="example-section">
+        <h2>JS BigInt</h2>
+        <p>Tipe data untuk angka yang sangat besar, dibuat dengan menambahkan <code>n</code> di akhir angka.</p>
+        <div class="example-code">
+            <pre>
+let bigNumber = 1234567890123456789012345678901234567890n;
+console.log(bigNumber); // Outputs: 1234567890123456789012345678901234567890n
+            </pre>
+        </div>
+    </div>
+
+    <!-- JS Number Methods -->
+    <div class="example-section">
+        <h2>JS Number Methods</h2>
+        <p>Metode angka seperti <code>toFixed()</code> dan <code>toString()</code> memformat angka.</p>
+        <div class="example-code">
+            <pre>
+let num = 123.456;
+console.log(num.toFixed(2)); // Outputs: 123.46
+console.log(num.toString()); // Outputs: 123.456
+            </pre>
+        </div>
+    </div>
+
+    <!-- JS Number Properties -->
+    <div class="example-section">
+        <h2>JS Number Properties</h2>
+        <p>Properti bawaan seperti <code>MAX_VALUE</code> dan <code>MIN_VALUE</code>.</p>
+        <div class="example-code">
+            <pre>
+console.log(Number.MAX_VALUE); // Outputs: 1.7976931348623157e+308
+console.log(Number.MIN_VALUE); // Outputs: 5e-324
+            </pre>
+        </div>
+    </div>
+
+    <!-- JS Arrays -->
+    <div class="example-section">
+        <h2>JS Arrays</h2>
+        <p>Array adalah daftar nilai, dideklarasikan dengan tanda kurung siku.</p>
+        <div class="example-code">
+            <pre>
+let fruits = ["Apple", "Banana", "Cherry"];
+console.log(fruits); // Outputs: ['Apple', 'Banana', 'Cherry']
+            </pre>
+        </div>
+    </div>
+
+    <!-- JS Array Methods -->
+    <div class="example-section">
+        <h2>JS Array Methods</h2>
+        <p>Metode array seperti <code>push()</code>, <code>pop()</code>, <code>sort()</code>, dan <code>filter()</code>.</p>
+        <div class="example-code">
+            <pre>
+let fruits = ["Apple", "Banana", "Cherry"];
+fruits.push("Orange");
+console.log(fruits); // Outputs: ['Apple', 'Banana', 'Cherry', 'Orange']
+
+fruits.pop();
+console.log(fruits); // Outputs: ['Apple', 'Banana', 'Cherry']
+            </pre>
+        </div>
+    </div>
+
+    <!-- JS Array Search -->
+    <div class="example-section">
+        <h2>JS Array Search</h2>
+        <p>Mencari elemen dalam array dengan <code>indexOf()</code>, <code>find()</code>, atau <code>includes()</code>.</p>
+        <div class="example-code">
+            <pre>
+let numbers = [1, 2, 3, 4, 5];
+console.log(numbers.indexOf(3)); // Outputs: 2
+console.log(numbers.includes(6)); // Outputs: false
+console.log(numbers.find(num => num > 3)); // Outputs: 4
+            </pre>
+        </div>
+    </div>
+
+    <!-- JS Arrow Function -->
+    <div class="example-section">
+        <h2>JS Arrow Function</h2>
+        <p>Simplifikasi sintaks fungsi dengan tanda panah (<code>=></code>).</p>
+        <div class="example-code">
+            <pre>
+const add = (a, b) => a + b;
+console.log(add(2, 3)); // Outputs: 5
+            </pre>
+        </div>
+    </div>
+
+    <!-- JS Classes -->
+    <div class="example-section">
+        <h2>JS Classes</h2>
+        <p>Definisi dan penggunaan kelas untuk membuat objek.</p>
+        <div class="example-code">
+            <pre>
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  greet() {
+    console.log(Hello, ${this.name}!);
+  }
+}
+const person1 = new Person("John", 30);
+person1.greet(); // Outputs: Hello, John!
+            </pre>
+        </div>
+    </div>
+
+    <!-- JS Modules -->
+    <div class="example-section">
+        <h2>JS Modules</h2>
+        <p>Fitur untuk membagi kode menjadi modul-modul yang dapat diimpor dan diekspor.</p>
+        <div class="alert alert-custom">
+            Untuk menggunakan modul, pastikan kode disertakan dalam file terpisah dan menggunakan <code>import</code> dan <code>export</code>.
+        </div>
+        <div class="example-code">
+            <pre>
+export function greet(name) {
+  return Hello, ${name}!;
+}
+
+import { greet } from './greeting.js';
+console.log(greet("John")); // Outputs: Hello, John!
+            </pre>
+        </div>
+    </div>
+
+    <!-- JS JSON -->
+    <div class="example-section">
+        <h2>JS JSON</h2>
+        <p>Format data untuk pertukaran informasi, mendukung struktur objek dalam JavaScript.</p>
+        <div class="example-code">
+            <pre>
+let jsonData = '{"name": "John", "age": 30}';
+let obj = JSON.parse(jsonData);
+console.log(obj.name); // Outputs: John
+            </pre>
+        </div>
+    </div>
+
+    <!-- JS Debugging -->
+    <div class="example-section">
+        <h2>JS Debugging</h2>
+        <p>Proses untuk menemukan dan memperbaiki kesalahan menggunakan alat seperti <code>console.log()</code>.</p>
+        <div class="example-code">
+            <pre>
+let a = 10;
+let b = 0;
+console.log(a / b); // Outputs: Infinity
+            </pre>
+        </div>
+    </div>
+
+    <!-- JS Style Guide -->
+    <div class="example-section">
+        <h2>JS Style Guide</h2>
+        <p>Panduan untuk menulis kode yang konsisten dan mudah dibaca.</p>
+        <div class="example-code">
+            <pre>
+const maxValue = 100;  // Use uppercase for constants
+function add(a, b) {
+  return a + b; // Use camelCase for function names
+}
+            </pre>
+        </div>
+    </div>
+
+    <!-- JS Best Practices -->
+    <div class="example-section">
+        <h2>JS Best Practices</h2>
+        <p>Praktik terbaik untuk menulis kode yang efisien dan terstruktur.</p>
+        <div class="example-code">
+            <pre>
+const getMaxValue = (arr) => Math.max(...arr);  // Use spread operator for arrays
+console.log(getMaxValue([1, 2, 3, 4, 5])); // Outputs: 5
+            </pre>
+        </div>
+    </div>
+
+    <!-- JS Mistakes -->
+    <div class="example-section">
+        <h2>JS Mistakes</h2>
+        <p>Kesalahan umum dalam JavaScript dan cara menghindarinya.</p>
+        <div class="alert alert-danger">
+            Contoh kesalahan: mengubah variabel dalam <code>forEach()</code> bisa menyebabkan hasil yang tidak terduga.
+        </div>
+        <div class="example-code">
+            <pre>
+let nums = [1, 2, 3];
+nums.forEach((num) => num = num * 2); // This does not change the original array
+console.log(nums); // Outputs: [1, 2, 3]
+            </pre>
+        </div>
+    </div>
+
+    <!-- JS Performance -->
+    <div class="example-section">
+        <h2>JS Performance</h2>
+        <p>Optimasi kode untuk kinerja yang lebih baik.</p>
+        <div class="example-code">
+            <pre>
+let largeArray = [...Array(1000000).keys()];
+console.time('Array processing');
+largeArray.filter(x => x % 2 === 0); // Optimized filtering
+console.timeEnd('Array processing');
+            </pre>
+        </div>
+    </div>
+
+    <!-- JS Reserved Words -->
+    <div class="example-section">
+        <h2>JS Reserved Words</h2>
+        <p>Kata kunci yang sudah digunakan oleh JavaScript dan tidak dapat digunakan sebagai nama variabel atau fungsi.</p>
+        <div class="example-code">
+            <pre>
+// Cannot use reserved words as variable names:
+let let = 5; // SyntaxError: Unexpected token 'let'
+            </pre>
+        </div>
+    </div>
+
+    <!-- JS Versions -->
+    <div class="example-section">
+        <h2>JS Versions</h2>
+        <p>Perubahan dan fitur baru dari setiap versi JavaScript, mulai dari ES5 hingga ES2024.</p>
+        <div class="example-code">
+            <pre>
+// ES6 introduced let and const for variable declarations
+let name = "Alice";
+const age = 25;
+            </pre>
+        </div>
+    </div>
+
+    <!-- JS 2009 (ES5) to JS 2024 -->
+    <div class="example-section">
+        <h2>JS 2009 (ES5) to JS 2024</h2>
+        <p>Fitur baru dan perubahan yang diperkenalkan di setiap versi, dari ES5 hingga ES2024.</p>
+        <div class="example-code">
+            <pre>
+// ES2024 introduced better support for async/await and other features
+async function fetchData() {
+    let response = await fetch('https://api.example.com/data');
+    let data = await response.json();
+    console.log(data);
+}
+fetchData();
+            </pre>
+        </div>
+    </div>
+
+    <!-- JS IE / Edge -->
+    <div class="example-section">
+        <h2>JS IE / Edge</h2>
+        <p>Perbandingan antara Internet Explorer dan Edge dalam mendukung JavaScript.</p>
+    </div>
+
+    <!-- JS History -->
+    <div class="example-section">
+        <h2>JS History</h2>
+        <p>Sejarah perkembangan JavaScript dari awal hingga sekarang.</p>
+    </div>
+
+    <!-- Object Definitions -->
+    <div class="example-section">
+        <h2>Object Definitions</h2>
+        <p>Definisi objek dan cara mendefinisikan objek dalam JavaScript.</p>
+    </div>
+
+    <!-- Object Prototypes -->
+    <div class="example-section">
+        <h2>Object Prototypes</h2>
+        <p>Prototipe objek dan konsep pewarisan dalam JavaScript.</p>
+    </div>
+
+    <!-- Object Methods -->
+    <div class="example-section">
+        <h2>Object Methods</h2>
+        <p>Metode untuk bekerja dengan objek dalam JavaScript.</p>
+    </div>
+
+    <!-- Object Properties -->
+    <div class="example-section">
+        <h2>Object Properties</h2>
+        <p>Properti objek dan cara mengakses atau mengubahnya.</p>
+     
+    <!-- Object Get / Set -->
+    <div class="example-section">
+        <h2>Object Get / Set</h2>
+        <p>Penggunaan <code>get</code> dan <code>set</code> untuk mengakses dan mengubah properti objek.</p>
+        <div class="example-code">
+            <pre>
+class Person {
+    constructor(name, age) {
+        this._name = name;
+        this._age = age;
+    }
+
+    get name() {
+        return this._name;
+    }
+
+    set name(value) {
+        this._name = value;
+    }
+
+    get age() {
+        return this._age;
+    }
+
+    set age(value) {
+        this._age = value;
+    }
+}
+
+const person = new Person("Alice", 25);
+console.log(person.name);  // Outputs: Alice
+person.name = "Bob";
+console.log(person.name);  // Outputs: Bob
+            </pre>
+        </div>
+    </div>
+
+    <!-- Object Protection -->
+    <div class="example-section">
+        <h2>Object Protection</h2>
+        <p>Melindungi properti objek menggunakan getter, setter, atau pengaturan akses.</p>
+        <div class="example-code">
+            <pre>
+class BankAccount {
+    constructor(balance) {
+        this._balance = balance;
+    }
+
+    get balance() {
+        return this._balance;
+    }
+
+    set balance(amount) {
+        if(amount >= 0) {
+            this._balance = amount;
+        } else {
+            console.log("Balance cannot be negative!");
+        }
+    }
+}
+
+const account = new BankAccount(100);
+console.log(account.balance);  // Outputs: 100
+account.balance = 50;          // Valid
+console.log(account.balance);  // Outputs: 50
+account.balance = -10;         // Outputs: Balance cannot be negative!
+            </pre>
+        </div>
+    </div>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        h1 {
+            text-align: center;
+            color: #343a40;
+        }
+
+        .example-section {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .example-section h2 {
+            color: #007bff;
+        }
+
+        .example-code {
+            background-color: #f1f1f1;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 14px;
+        }
+
+        .example-code pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .alert-custom {
+            background-color: #e2e3e5;
+            padding: 15px;
+            border-radius: 5px;
+            color: #383d41;
+        }
+
+        .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .alert-custom, .alert-danger {
+            margin-bottom: 20px;
+        }
+    </style>
+
+<div class="text-center btn-succes mt-4">
+    <P>Klik Ini Ya <a href="JS_KETIGA.html" class="btn btn-success">Next Web Tentang JavaScript</a> </P>
+ </div>
+
+ <footer>
+    <p>&copy; 2024 Dasar JavaScript</p>
+</footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
